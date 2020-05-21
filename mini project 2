@@ -1,0 +1,75 @@
+# template for "Guess the number" mini-project
+# input will come from buttons and an input field
+# all output for the game will be printed in the console
+
+import simplegui
+import random
+num_range=100
+n=7
+times=0
+# helper function to start and restart the game
+def new_game():
+    # initialize global variables used in your code here
+    global secret_number
+    global num_range
+    secret_number=random.randrange(0,num_range)
+
+# define event handlers for control panel
+def range100():
+    # button that changes the range to [0,100) and starts a new game 
+    print("Start new game!")
+    global num_range
+    global n
+    global times
+    times=0
+    n=7    
+    num_range=100
+    new_game()
+
+def range1000():
+    # button that changes the range to [0,1000) and starts a new game        
+    print("Start new game!")    
+    global num_range
+    global n
+    global times
+    times=0
+    n=10
+    num_range=1000
+    new_game()
+    
+def input_guess(guess):
+    # main game logic goes here
+    global times
+    global Guess
+    Guess=int(guess)
+    print("Guess was " + guess)
+    
+    if times<n:
+        if secret_number>Guess:
+            print("Higher!\n")
+        if secret_number==Guess:
+            print("Correct\n")
+        if secret_number<Guess:
+            print("Lower!\n")
+        
+        print(times)
+        times+=1
+    else:
+        print("You lost!")
+        frame.stop()
+    
+    
+        
+frame = simplegui.create_frame('Guess the number', 200, 200)
+frame.add_input("Enter",input_guess,100)
+button1=frame.add_button("Range is [0,100)",range100,200)
+button2=frame.add_button("Range is [0,1000)",range1000,200)
+
+# register event handlers for control elements and start frame
+frame.start()
+
+# call new_game 
+new_game()
+
+
+# always remember to check your completed program against the grading rubric
