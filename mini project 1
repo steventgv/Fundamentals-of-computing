@@ -51,7 +51,7 @@ def number_to_name(number):
     # convert number to a name using if/elif/else
     # don't forget to return the result!
     
-
+    
 def rpsls(player_choice): 
     # delete the following pass statement and fill in your code below   
     
