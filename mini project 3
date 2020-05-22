@@ -19,9 +19,9 @@ def format(time):
         seconds=str(seconds)
         
     miliseconds=str(miliseconds)
-    digit=minutes+":"+seconds+"."+miliseconds
-    
+    digit=minutes+":"+seconds+"."+miliseconds   
     return digit
+    
 # define event handlers for buttons; "Start", "Stop", "Reset"
 def start_counter():
     timer.start()
