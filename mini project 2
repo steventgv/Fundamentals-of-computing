@@ -25,7 +25,7 @@ def range100():
     n=7    
     num_range=100
     new_game()
-
+    
 def range1000():
     # button that changes the range to [0,1000) and starts a new game        
     print("Start new game!")    
