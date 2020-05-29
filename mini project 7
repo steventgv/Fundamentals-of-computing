@@ -1,3 +1,5 @@
+# http://www.codeskulptor.org/#user47_VscdqsH37B_13.py
+
 # program template for Spaceship
 import simplegui
 import math
@@ -104,7 +106,7 @@ class Ship:
         self.left_turn=False
         self.right_turn=False
         self.sound=sound
-        #if sound:
+        
             
         
         
@@ -123,7 +125,7 @@ class Ship:
                        
         if self.thrust == True:                       
             canvas.draw_image(ship_image,[ship_info.get_center()[0]+ship_info.get_size()[0],ship_info.get_center()[1]], ship_info.get_size(),[self.pos[0],self.pos[1]],ship_info.get_size(),self.angle)                       
-           
+            
                    
         else:            
             canvas.draw_image(ship_image,ship_info.get_center(), ship_info.get_size(),[self.pos[0],self.pos[1]],ship_info.get_size(),self.angle)
@@ -220,8 +222,10 @@ def draw(canvas):
     canvas.draw_image(debris_image, center, size, (wtime - WIDTH / 2, HEIGHT / 2), (WIDTH, HEIGHT))
     canvas.draw_image(debris_image, center, size, (wtime + WIDTH / 2, HEIGHT / 2), (WIDTH, HEIGHT))
 
-    canvas.draw_text(str(score),(100,50),30,"White")
-    canvas.draw_text(str(lives),(180,50),30,"White")
+    canvas.draw_text("Lives",(100,50),30,"White")
+    canvas.draw_text(str(lives),(100,90),30,"White")
+    canvas.draw_text("Score",(600,50),30,"White")
+    canvas.draw_text(str(score),(600,90),30,"White")
        
     # draw ship and sprites
     my_ship.draw(canvas)
