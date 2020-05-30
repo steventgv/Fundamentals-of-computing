@@ -1,4 +1,4 @@
-# http://www.codeskulptor.org/#user47_M2Qh6nImBt_1.py
+# http://www.codeskulptor.org/#user47_M2Qh6nImBt_2.py
 
 # template for "Guess the number" mini-project
 # input will come from buttons and an input field
@@ -54,7 +54,7 @@ def input_guess(guess):
         if secret_number<Guess:
             print("Lower!\n")
         
-        print(times)
+        #print(times)
         times+=1
     else:
         print("You lost!")
