@@ -96,9 +96,8 @@ def strategy(hand, num_die_sides):
     """
     all_holds=gen_all_holds(hand)
     all_holds=list(all_holds)
-    expected_value_list=[]
-    for element in all_holds:
-        expected_value_list.append(expected_value(element,num_die_sides,len(hand)-len(element)))   
+    expected_value_list=[expected_value(element,num_die_sides,len(hand)-len(element)) for element in all_holds]
+    
     return (max(expected_value_list), all_holds[expected_value_list.index(max(expected_value_list))])
 
 
